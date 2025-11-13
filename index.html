@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderWise Solutions</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f9fafc;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(90deg, #004aad, #007bff);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+    nav {
+      background: #022f6a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      padding: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    nav a:hover { background: #004aad; transform: scale(1.05); }
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .service {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .service:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .hidden-info { display: none; text-align: left; animation: slideDown 0.5s ease forwards; }
+    .service.active .hidden-info { display: block; margin-top: 1rem; }
+    .cta-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #004aad;
+      color: #fff;
+      border-radius: 2rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .cta-btn:hover { background: #022f6a; transform: translateY(-3px); }
+    form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease-in-out;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+    form input:focus, form select:focus, form textarea:focus {
+      border-color: #004aad;
+      outline: none;
+    }
+    form button {
+      background: #004aad;
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    form button:hover { background: #022f6a; }
+    #whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    #whatsapp-float:hover { transform: scale(1.1); }
+    @keyframes fadeIn { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInDown { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes slideDown { from {opacity: 0; transform: translateY(-10px);} to {opacity: 1; transform: translateY(0);} }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WanderWise Solutions</h1>
+    <p>Your Gateway to Global Opportunities</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to WanderWise Solutions</h2>
+    <p>We specialize in helping individuals achieve their dreams of studying, working, and exploring abroad.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service" onclick="toggleService(this)">
+        <h3>Admission Assistance</h3>
+        <div class="hidden-info">
+          <p>We assist prospective students in securing admissions in universities across the UK, US, Canada, Sweden, and Germany. From program selection to application submission, we ensure your application stands out.</p>
+          <p>Our services include personalized counseling, document preparation, and guidance on interviews and visa processes.</p>
+          <a href="https://wa.me/17575539202" class="cta-btn">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="service" onclick="toggleService(this)">
+        <h3>Scholarship Guidance</h3>
+        <div class="hidden-info">
+          <p>We provide expert advice and assistance in identifying and applying for scholarships globally. Our guidance covers merit-based, need-based, and research-specific scholarships for international students.</p>
+          <a href="https://wa.me/17575539202" class="cta-btn">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="service" onclick="toggleService(this)">
+        <h3>CV & Document Services</h3>
+        <div class="hidden-info">
+          <p>Our professionals help tailor your CV, cover letter, statement of purpose, and motivation letters to fit the standards of international applications—both academic and professional.</p>
+          <a href="https://wa.me/17575539202" class="cta-btn">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="service" onclick="toggleService(this)">
+        <h3>Travel Documentation</h3>
+        <div class="hidden-info">
+          <p>We assist in securing and organizing essential travel documents such as invitation letters, proof of accommodation, and more—making your travel process smooth and stress-free.</p>
+          <a href="https://wa.me/17575539202" class="cta-btn">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option>Admission Assistance</option>
+        <option>Scholarship Guidance</option>
+        <option>CV & Document Services</option>
+        <option>Travel Documentation</option>
+      </select>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send via WhatsApp</button>
+    </form>
+  </section>
+
+  <a id="whatsapp-float" href="https://wa.me/17575539202" target="_blank">💬</a>
+
+  <script>
+    function toggleService(element) {
+      element.classList.toggle('active');
+    }
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let name = document.getElementById('name').value.trim();
+      let email = document.getElementById('email').value.trim();
+      let service = document.getElementById('service').value;
+      let message = document.getElementById('message').value.trim();
+      if (!name || !email || !service || !message) {
+        alert('Please fill out all fields.');
+        return;
+      }
+      const whatsappURL = `https://wa.me/17575539202?text=Hello WanderWise Solutions!%0A%0AMy name is ${encodeURIComponent(name)}.%0AEmail: ${encodeURIComponent(email)}%0AService: ${encodeURIComponent(service)}%0AMessage: ${encodeURIComponent(message)}`;
+      window.open(whatsappURL, '_blank');
+    });
+  </script>
+</body>
+</html>
